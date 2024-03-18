@@ -1,5 +1,5 @@
-//import { data } from '../src/data/dataset.js';
-//import { filterData, sortData, computeStats } from '../src/lib/dataFunctions.js';
+import { data } from '../src/data/dataset.js';
+import { filterData, sortData, computeStats } from '../src/lib/dataFunctions.js';
 
 
 describe('testes filterData', () => {

@@ -9,7 +9,6 @@ import { individualChat } from "./views/individualChat/index.js";
 import { groupChat } from "./views/groupChat/index.js";
 import { error } from "./views/error/index.js";
 
-
 //import { renderAboutMe } from './components/aboutMe/index.js';
 //import { renderButtons } from './components/buttons/index.js';
 //import { renderCards } from './components/cards/index.js';
@@ -31,13 +30,14 @@ const routes = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector("header");
+  header.appendChild(renderHeader());
+ 
   const root = document.getElementById('root');
+  root.appendChild(homePage());
 
   const footer = document.querySelector("footer");
   footer.appendChild(renderFooter());
-
-  const header = document.querySelector("header");
-  header.appendChild(renderHeader());
 
   setRootEl(root);
 

@@ -2,8 +2,8 @@ export const filterData = (data, filterBy, value) => {
     return data.filter(function (el) {
         let splitValue = "";
 
-        if (filterBy === "formacaoSugerida") {
-            splitValue = el.facts.formacaoSugerida.split(", ");
+        if (filterBy === "formacao") {
+            splitValue = el.facts.formacao.split(", ");
         } else if (filterBy === "techSkills") {
             splitValue = el.facts.techSkills.split(", ");
         }

@@ -1,5 +1,4 @@
-export default [
-
+export const data = [
   {
     "id": "admin-banco-dados",
     "name": "Pessoa Administradora de Banco de Dados",
@@ -432,5 +431,4 @@ export default [
     }
 
   }
-
 ];
