@@ -1,23 +1,23 @@
 let ROUTES = {};
 let rootEl;
 
-const setRootEl =(el) => {
+const setRootEl = (el) => {
     rootEl = el
 }
 
 function setRoutes(routes) {
-   ROUTES = routes 
+    ROUTES = routes
 }
 
 function renderView(view) {
-   //limpar antes de renderizar
+    //limpar antes de renderizar
     rootEl.innerHTML = "";
-    //append apenas agrega/adiciona.
-    rootEl.appendChild(ROUTES[view]()) 
+    //appendChild apenas agrega/adiciona.
+    rootEl.appendChild(ROUTES[view]())
 }
 
 function onURLChange(location) {
-    renderView(location.hash)
+    renderView(location.pathname)
 }
 
-export {setRootEl, setRoutes, renderView, onURLChange};
+export { setRootEl, setRoutes, renderView, onURLChange };

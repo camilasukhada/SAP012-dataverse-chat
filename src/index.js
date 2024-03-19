@@ -11,7 +11,7 @@ import { error } from "./views/error/index.js";
 
 //import { renderAboutMe } from './components/aboutMe/index.js';
 //import { renderButtons } from './components/buttons/index.js';
-//import { renderCards } from './components/cards/index.js';
+import { renderCards } from './components/cards/index.js';
 //import { renderChatBanner } from './components/chatBanner/index.js';
 //import { renderChatBox } from './components/chatBox/index.js';
 //import { renderChatButton } from './components/chatButton/index.js';
@@ -22,11 +22,11 @@ import { error } from "./views/error/index.js";
 
 
 const routes = {
-  "#homePage": homePage,
-  "#profile": profile,
-  "#individualChat": individualChat,
-  "#groupChat": groupChat,
-  "#error": error
+  "/": homePage,
+  "/profile": profile,
+  "/individualChat": individualChat,
+  "/groupChat": groupChat,
+  "/error": error
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setRoutes(routes);
 
-  onURLChange();
+  onURLChange(window.location);
 });
 
-window.addEventListener("hashchange", (event) => {
+/*window.addEventListener("hashchange", (event) => {
   onURLChange(event.target.location)
-})
+})*/
