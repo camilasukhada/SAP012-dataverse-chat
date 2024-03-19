@@ -1,0 +1,61 @@
+.flex-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.justify-align,
+.estatistica {
+    justify-content: center;
+    text-align: center;
+}
+
+.font-size {
+    font-size: 15px;
+}
+
+li.container_itens {
+    background-color: #cebdcc5c;
+    color: #322d37;
+    padding: 20px;
+    border-radius: 50px;
+    width: 300px;
+    margin: 20px;
+    display: flex;
+}
+
+.container_itens dd[itemprop="name"],
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd,
+dt {
+    margin: 0px;
+    text-align: center;
+}
+
+dl {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+dl img {
+    width: 150px;
+    height: 150px;
+}
+
+dt {
+    font-size: larger;
+}
+
+.container_itens dd[itemprop="personaName"] {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.container_itens dd[itemprop="persona"] {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
