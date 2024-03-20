@@ -5,69 +5,69 @@ import { filterData, sortData, computeStats } from '../../lib/dataFunctions.js';
 import { renderStatsMessage } from '../../components/cards/index.js';
 
 const homePage = () => {
-    let cardData = [...data];
+  let cardData = [...data];
 
-    const filterBody = document.createElement('div');
-    const cardBody = document.createElement('div');
+  const filterBody = document.createElement('div');
+  const cardBody = document.createElement('div');
+
+  cardBody.appendChild(renderCards(cardData));
+
+  filterBody.appendChild(renderFilter());
+
+  const filtro = filterBody.querySelector("#filtro");
+
+  filtro.addEventListener("change", (e) => {
+    let value = e.target.value;
+    const filterBy = value.split("|")[0];
+    value = value.split("|")[1];
+
+    if (value === "todos") {
+      cardData = [...data];
+    } else {
+      cardData = filterData(data, filterBy, value);
+    }
+
+    cardBody.innerHTML = "";
+
+    if (value !== "todos") {
+      const count = computeStats(data, filterBy, value);
+      const statsMessage = renderStatsMessage(count);
+      cardBody.appendChild(statsMessage);
+    }
 
     cardBody.appendChild(renderCards(cardData));
 
-    filterBody.appendChild(renderFilter());
+  });
 
-    const filtro = filterBody.querySelector("#filtro");
+  filterBody.appendChild(cardBody);
 
-    filtro.addEventListener("change", (e) => {
-        let value = e.target.value;
-        const filterBy = value.split("|")[0];
-        value = value.split("|")[1];
+  const ordenacao = filterBody.querySelector("#ordenacao");
 
-        if (value === "todos") {
-            cardData = [...data];
-        } else {
-            cardData = filterData(data, filterBy, value);
-        }
-        
-        cardBody.innerHTML = "";
+  ordenacao.addEventListener("change", (e) => {
+    const orderValue = e.target.value;
 
-        if (value !== "todos") {
-            const count = computeStats(data, filterBy, value);
-            const statsMessage = renderStatsMessage(count);
-            cardBody.appendChild(statsMessage);
-        }        
-        
-        cardBody.appendChild(renderCards(cardData));    
-        
-    });
+    if (orderValue === "asc") {
+      cardData = sortData(cardData, "salario", "asc");
+    }
+    else if (orderValue === "desc") {
+      cardData = sortData(cardData, "salario", "desc");
+    }
 
-    filterBody.appendChild(cardBody);
+    cardBody.innerHTML = "";
+    cardBody.appendChild(renderCards(cardData));
+  });
 
-    const ordenacao = filterBody.querySelector("#ordenacao");
-    
-    ordenacao.addEventListener("change", (e) => {
-        const orderValue = e.target.value;
+  const botaoLimpar = filterBody.querySelector("#reset-button");
 
-        if (orderValue === "asc") {
-            cardData = sortData(cardData, "salario", "asc");
-        }
-        else if (orderValue === "desc") {
-            cardData = sortData(cardData, "salario", "desc");
-        }
+  botaoLimpar.addEventListener("click", () => {
+    cardData = [...data];
+    filtro.value = "todos|todos";
+    ordenacao.value = "default";
+    cardBody.innerHTML = "";
+    cardBody.appendChild(renderCards(cardData));
+  });
 
-        cardBody.innerHTML = "";
-        cardBody.appendChild(renderCards(cardData));
-    });
-
-    const botaoLimpar = filterBody.querySelector("#reset-button");
-
-    botaoLimpar.addEventListener("click", () => {
-        cardData = [...data];        
-        filtro.value = "todos|todos";
-        ordenacao.value = "default";
-        cardBody.innerHTML = "";
-        cardBody.appendChild(renderCards(cardData));
-    });
-
-    return filterBody;
+  return filterBody;
 }
 
 export { homePage };

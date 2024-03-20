@@ -1,9 +1,9 @@
 export const renderCards = (data) => {
-    const itens = document.createElement('ul');
-    itens.classList.add('container_itens');
+  const itens = document.createElement('ul');
+  itens.classList.add('container_itens');
 
-    data.forEach((item) => {
-        itens.innerHTML += `
+  data.forEach((item) => {
+    itens.innerHTML += `
    <li itemscope itemtype="mulheresTech" class="container_itens" >
       <dl itemscope itemtype="mulheresTech"> 
         <dt class="font-size"></dt><dd itemprop="imageUrl" class="justify-align font-size"><img class="justify-align" src="${item.imageUrl}" itemprop="${item.imageUrl}" alt="Profissional mulher da área da tecnologia." /> </dd>
@@ -15,14 +15,14 @@ export const renderCards = (data) => {
       </dl>
     </div>
    `;
-    })
-    itens.className = "flex-center";
-    return itens;
+  })
+  itens.className = "flex-center";
+  return itens;
 };
 
 export const renderStatsMessage = (count) => {
-    const statsMessage = document.createElement('div');
-    statsMessage.textContent = `Exibindo ${count} carreira(s) relacionada(s) a essa formação:`;
-    statsMessage.className = "estatistica";
-    return statsMessage;
+  const statsMessage = document.createElement('div');
+  statsMessage.textContent = `Exibindo ${count} carreira(s) relacionada(s) a essa formação:`;
+  statsMessage.className = "estatistica";
+  return statsMessage;
 };

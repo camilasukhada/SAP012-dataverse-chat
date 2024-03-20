@@ -1,4 +1,3 @@
-
 export const renderFilter = () => {
 
   const filters = document.createElement('p');
