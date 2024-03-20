@@ -1,0 +1,45 @@
+.comandos,
+.estatistica {
+    color: #322d37;
+}
+
+select,
+#reset-button {
+    height: 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.comandos,
+.estatistica {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.comandos {
+    font-size: 20px;
+}
+
+select {
+    background-color: #d9d9d926;
+    width: 210px;
+    border-style: dashed;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#reset-button {
+    background-color: #322d37;
+    color: #e0cede;
+    font-weight: bold;
+    width: 150px;
+    border: none;
+}
+
+li.container_itens {
+    margin: 20px;
+    width: 300px;
+    border-radius: 50px;
+    display: flex;
+}
