@@ -16,6 +16,14 @@ function renderView(view) {
   rootEl.appendChild(ROUTES[view]())
 }
 
+/*function nagivateTo() {
+ 
+}
+
+function queryStringto() {
+ 
+}*/
+
 function onURLChange(location) {
   renderView(location.pathname)
 }
