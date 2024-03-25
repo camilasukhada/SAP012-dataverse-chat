@@ -1,6 +1,21 @@
 export const renderButtons = () => {
 
-    const buttons = document.createElement('h1');
-    buttons.textContent = "botão";
-    return buttons
-  }
+  const btnHomePage = document.createElement('div');
+  btnHomePage.innerHTML = `
+  <section class="btnHome">
+    <div>
+      <button class="btnHome">HOME</button>
+    </div>
+  </section>`;
+
+  const btnHome = btnHomePage.querySelector(".btnHome");
+  btnHome.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+  
+  return btnHomePage
+}
+
+
+
+  

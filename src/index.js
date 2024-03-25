@@ -5,6 +5,7 @@ import { setRootEl, setRoutes, onURLChange } from "./router.js";
 import { renderFooter } from './components/footer/index.js';
 import { renderHeader } from './components/header/index.js';
 
+import { renderButtons } from './components/buttons/index.js';
 import { renderModal } from './components/modal/index.js';
 
 import { homePage } from "./views/homePage/index.js";
@@ -34,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modal = document.querySelector(".key-content");
   modal.appendChild(renderModal());
+
+  const btnHome= document.querySelector(".btnHome");
+  btnHome.appendChild(renderButtons());
 
   setRootEl(root);
 
