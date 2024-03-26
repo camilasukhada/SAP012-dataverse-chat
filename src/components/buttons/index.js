@@ -2,11 +2,11 @@ export const renderButtons = () => {
 
   const btnHomePage = document.createElement('div');
   btnHomePage.innerHTML = `
-  <section class="btnHome">
+  <div class="btnHome">
     <div>
-      <button class="btnHome">HOME</button>
+      <button class="btnHome">Home</button>
     </div>
-  </section>`;
+  </div>`;
 
   const btnHome = btnHomePage.querySelector(".btnHome");
   btnHome.addEventListener("click", () => {

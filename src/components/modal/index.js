@@ -1,7 +1,9 @@
+import { setApiKey, getApiKey } from "../../lib/apiKey.js";
+
 export const renderModal = () => {
     const modal = document.createElement('div');
     modal.innerHTML = `
-    <section class="key-content">
+    <div class="key-content">
         <div>
             <button class="btnKey">API Key</button>
         </div>
@@ -13,7 +15,7 @@ export const renderModal = () => {
                 <button type="submit" class="btnCancelKey">Cancelar</button>
             </dialog>
         </div>
-    </section>`;
+    </div>`;
    
     const btnKeyApi = modal.querySelector(".btnKey");
     const btnSubmitKey = modal.querySelector('.btnSubmitKey');

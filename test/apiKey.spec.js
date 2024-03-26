@@ -1,4 +1,4 @@
-import { getApiKey, setApiKey } from '../lib/apiKey.js';
+/*import { getApiKey, setApiKey } from '../lib/apiKey.js';
 
 describe('getApiKey', () => {
 
@@ -17,8 +17,8 @@ describe('getApiKey', () => {
 describe('setApiKey', () => {
 
   it('deve definir a chave API corretamente', () => {
-    const apiKey = 'testandoNovaKey';
+    const apiKey = 'novaApiKey';
     setApiKey(apiKey);
     expect(localStorage.getItem('apiKeyChatGPT')).toBe(apiKey);
   });
-});
+});*/

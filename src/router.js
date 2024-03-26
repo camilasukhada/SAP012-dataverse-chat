@@ -10,9 +10,7 @@ function setRoutes(routes) {
 }
 
 function renderView(view) {
-  //limpar antes de renderizar
   rootEl.innerHTML = "";
-  //appendChild apenas agrega/adiciona.
   rootEl.appendChild(ROUTES[view]())
 }
 
