@@ -14,3 +14,71 @@
 /*@import url("./components/membersList/style.css");*/
 /*@import url("./components/textArea/style.css");*/
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+main {
+    display: flexbox;
+}
+
+
+@media (max-width:450px) {
+
+    header {
+        justify-content: center;
+    }
+
+    header img {
+        display: none;
+    }
+
+    footer {
+        align-items: center;
+        text-align: center;
+        height: fit-content;
+    }
+}
+
+@media (max-width:700px) {
+
+    .comandos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #reset-button {
+        margin-top: 10px;
+
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    header img {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 1050px) and (min-width: 700px) {
+
+    .comandos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #reset-button {
+        margin-top: 10px;
+
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    header img {
+        max-height: 150px;
+    }
+}

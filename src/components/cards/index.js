@@ -12,11 +12,20 @@ export const renderCards = (data) => {
         <dt class="font-size"></dt><dd itemprop="persona"class="justify-align font-size">"${item.persona}"</dd>
         <dt class="font-size">Formação:</dt><dd itemprop="formacao" class="font-size">${item.facts.formacao}.</dd>
         <dt class="font-size">Salário:</dt><dd itemprop="salario" class="font-size">R$ ${item.facts.salario}.</dd>
+        <button class="iniciarChat flex-center" a href="/individualChat" >INICIAR CHAT!</button>      
       </dl>
     </div>
    `;
   })
+
   itens.className = "flex-center";
+
+  itens.querySelectorAll('.iniciarChat').forEach(button => {
+    button.addEventListener('click', () => {
+      window.location.href = "/individualChat"; 
+    });
+  });
+
   return itens;
 };
 

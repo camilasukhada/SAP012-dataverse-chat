@@ -67,7 +67,9 @@ const homePage = () => {
     cardBody.appendChild(renderCards(cardData));
   });
 
+
+
   return filterBody;
-}
+};
 
 export { homePage };
