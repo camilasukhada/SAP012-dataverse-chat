@@ -1,0 +1,24 @@
+/.dialogKey, { 
+    background-color:white;
+    border-radius: 40px;
+    border:none;
+}
+
+.btnSubmitKey{
+    background-color: #e0cede5c;
+    border-radius: 40px;
+    width: 100px;
+}
+
+.btnCancelKey{
+    background-color: #e0cede5c;
+    border-radius: 40px;
+    width: 100px;
+}
+
+.btnKey{
+    float: right;
+    width: 100px;
+    height: 50px;
+    font-size:20px;
+}
