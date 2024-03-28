@@ -1,11 +1,16 @@
-/.dialogKey, { 
-    background-color:white;
-    border-radius: 40px;
-    border:none;
+.dialogKey { 
+    background-color: #322d37;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    border-style:dotted;
 }
 
 .btnSubmitKey{
-    background-color: #e0cede5c;
+    background-color: #cebdcc5c;
     border-radius: 40px;
     width: 100px;
 }
@@ -16,9 +21,33 @@
     width: 100px;
 }
 
-.btnKey{
-    float: right;
-    width: 100px;
-    height: 50px;
-    font-size:20px;
+.btnSubmitKey, .btnCancelKey{
+height: 35px;
+cursor: pointer;
+border-radius: 10px;
+font-size: 15px;
+font-weight: bold; 
+margin: 10px 0px 20px 10px;
+font-size: 20px;
+color: #322d37;
+background-color: #ffffff;
+font-weight: bold;
+width: 150px;
+border: none;
+}
+
+p{
+    font-size: 25px;
+}
+
+#valueKey{
+    background-color: #ffffff;
+    width: 210px;
+   
+    margin-right: 15px;
+    margin-left: 5px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
 }

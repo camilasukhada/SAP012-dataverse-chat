@@ -4,7 +4,7 @@ export const renderButtons = () => {
   btnHomePage.innerHTML = `
   <div class="btnHome">
     <div>
-      <button class="btnHome">Home</button>
+      <button class="btnHomePage">Home</button>
     </div>
   </div>`;
 

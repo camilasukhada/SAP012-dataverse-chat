@@ -37,9 +37,3 @@ select {
     border: none;
 }
 
-li.container_itens {
-    margin: 20px;
-    width: 300px;
-    border-radius: 50px;
-    display: flex;
-}
