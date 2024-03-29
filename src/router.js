@@ -14,16 +14,15 @@ function renderView(view) {
   rootEl.appendChild(ROUTES[view]())
 }
 
-/*function nagivateTo() {
- 
+function navigateTo(pathname) {
+  window.history.pushState; //ver documentacao e continuar a implementa da function
+  renderView(pathname)
 }
 
-function queryStringto() {
- 
-}*/
+//function queryStringto() {} 
 
 function onURLChange(location) {
-  renderView(location.pathname)
+  navigateTo(location.pathname)
 }
 
 export { setRootEl, setRoutes, renderView, onURLChange };
