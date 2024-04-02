@@ -1,0 +1,11 @@
+li.container_itensChat{
+    background-color: rgb(230, 228, 230);
+    list-style-type: none;
+    border-radius: 50px;
+}*/
+
+.imageChat {
+    float: left; 
+    margin-left: 50px; 
+  }
+

@@ -1,8 +1,10 @@
 /*@import url("./components/aboutMe/style.css");*/
 
-/*@import url("./components/chatBanner/style.css");*/
+@import url("./components/chatBanner/style.css");
+@import url("./components/chatButton/style.css");
 /*@import url("./components/chatBox/style.css");*/
-/*@import url("./components/chatButton/style.css");*/
+
+@import url("./components/textArea/style.css");
 
 @import url("./components/filters/style.css");
 @import url("./components/footer/style.css");
