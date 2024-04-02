@@ -13,13 +13,13 @@ header {
 }
 
 h1 {
-    font-size: 90px;
+    font-size: 60px;
     margin-right: 20px;
     margin-left: 400px;
 }
 
 header img {
-    max-height: 180px;
+    max-height: 100px;
     padding-top: 20px;
     padding-right: 20px;
     margin-right: 0px;
@@ -31,7 +31,7 @@ header img {
     height: 35px;
     cursor: pointer;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold; 
     margin: 10px 10px 0px 10px;
     font-size: 20px;

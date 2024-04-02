@@ -1,0 +1,8 @@
+.chat-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #e0cede5c;
+    border-radius: 50px;
+    border: none;
+}
