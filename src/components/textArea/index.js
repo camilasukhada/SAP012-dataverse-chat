@@ -1,4 +1,4 @@
-export const renderTextArea = () => {
+/*export const renderTextArea = () => {
 
     const textArea = document.createElement('button');
     textArea.innerHTML = `<div class="textArea">
@@ -7,5 +7,5 @@ export const renderTextArea = () => {
   </div>`;
 
 return textArea
-};
+};*/
 

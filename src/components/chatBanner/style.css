@@ -2,10 +2,14 @@ li.container_itensChat{
     background-color: rgb(230, 228, 230);
     list-style-type: none;
     border-radius: 50px;
-}*/
+}
 
+.personaName{
+    font-size: 20px;
+    font-weight: bold;
+}
 .imageChat {
-    float: left; 
+    display: flex;
     margin-left: 50px; 
   }
 
