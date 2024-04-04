@@ -1,7 +1,7 @@
 export const getApiKey = () => {
-    return localStorage.getItem("apiKeyChatGPT");
+    return localStorage.getItem("apiKey");
  };
  
  export const setApiKey = (key) => {
-   localStorage.setItem("apiKeyChatGPT", key);
+   localStorage.setItem("apiKey", key);
  };

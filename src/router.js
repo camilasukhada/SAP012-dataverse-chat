@@ -9,20 +9,20 @@ function setRoutes(routes) {
   ROUTES = routes
 }
 
-function renderView(view) {
+function renderView(view, props) {
   rootEl.innerHTML = "";
-  rootEl.appendChild(ROUTES[view]())
+  rootEl.appendChild(ROUTES[view](props))
 }
 
-function navigateTo(pathname) {
-  window.history.pushState; //ver documentacao e continuar a implementa da function
-  renderView(pathname)
+function navigateTo(pathname, props) {
+  window.history.pushState; 
+  renderView(pathname, props)
 }
-
-//function queryStringto() {} 
 
 function onURLChange(location) {
   navigateTo(location.pathname)
 }
+
+window.addEventListener("popstate", onURLChange);
 
 export { setRootEl, setRoutes, renderView, onURLChange };
