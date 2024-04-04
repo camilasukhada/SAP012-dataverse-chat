@@ -1,4 +1,3 @@
-
 import { communicateWithOpenAI } from '../../lib/openAIApi.js';
 import { getApiKey } from '../../lib/apiKey.js';
 import { renderChatBanner } from "../../components/chatBanner/index.js";
@@ -16,7 +15,5 @@ const individualChat = () => {
 
   return bodyChat;
 }
-
-
 
 export { individualChat };

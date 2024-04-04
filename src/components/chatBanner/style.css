@@ -1,15 +1,27 @@
 li.container_itensChat{
     background-color: rgb(230, 228, 230);
-    list-style-type: none;
     border-radius: 50px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
 }
 
 .personaName{
     font-size: 20px;
     font-weight: bold;
 }
-.imageChat {
-    display: flex;
-    margin-left: 50px; 
-  }
 
+.imagem{
+    float:left;
+
+}
+
+.textBanner{
+
+
+}
+
+
+.container_itens{
+    
+}
