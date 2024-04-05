@@ -1,4 +1,5 @@
 import { communicateWithOpenAI } from '../../lib/openAIApi.js'
+import { data } from '../../data/dataset.js'
 
 export const renderChatBox = () => {
 
@@ -18,18 +19,32 @@ export const renderChatBox = () => {
       </div>
   </div>
 </div>`;
-//find com id para entender com que está falando, identificar a persona "name" e "pe rsona".
-//
+
+    const inputMessage = chatBox.querySelector('#message');
+    const conversation = chatBox.querySelector('#conversation');
+
+    function encontrarObjetoPorId(idProcurado) {
+        return data.find(objeto => objeto.id === idProcurado);
+    }
+    const params = new URLSearchParams(window.location.search);
+    const idURL = params.get("id");
+
+    const idDesejado = idURL;
+
     const btnEnviar = chatBox.querySelector("#sendMessageBtn");
-    btnEnviar.addEventListener("click", () => {
-//jogar o conteúdo do input e printar a conversa na tela.
-//apagar o input
-        communicateWithOpenAI("Administrador de Banco de Dados", "Oláááá");
-        //colocar o parâmetro mensagem será o parametro
-        //pegar o message (retorno) e printar resposta na tela.
+    btnEnviar.addEventListener("click", async () => {
+
+        const objetoEncontrado = encontrarObjetoPorId(idDesejado);
+
+        if (objetoEncontrado) {
+
+            conversation.innerHTML += `<p style="text-align:right"> ${inputMessage.value} </p>`;
+            const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
+            conversation.innerHTML += `<p> ${resposta.choices[0].message.content} </p>`;
+        }
     });
 
-    const startConversation = async (id) => {
+    /*const startConversation = async (id) => {
         idPersonaName = id;
 
         const sendMessage = async () => {
@@ -89,7 +104,7 @@ export const renderChatBox = () => {
         rootElements.insertAdjacentElement("afterend", el);
 
         return el;
-    };
+    };*/
 
     return chatBox
 };

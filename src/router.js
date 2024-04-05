@@ -25,4 +25,4 @@ function onURLChange(location) {
 
 window.addEventListener("popstate", onURLChange);
 
-export { setRootEl, setRoutes, renderView, onURLChange };
+export { setRootEl, setRoutes, renderView, navigateTo, onURLChange };
