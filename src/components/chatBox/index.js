@@ -2,10 +2,9 @@ import { communicateWithOpenAI } from '../../lib/openAIApi.js'
 import { data } from '../../data/dataset.js'
 
 export const renderChatBox = () => {
-
-    const chatBox = document.createElement('div');
-    chatBox.classList.add('chat-box');
-    chatBox.innerHTML = `<div class="container">
+  const chatBox = document.createElement('div');
+  chatBox.classList.add('chat-box');
+  chatBox.innerHTML = `<div class="container">
   <div class="persona-list">
          <ul id="personaList"></ul>
   </div>
@@ -20,31 +19,31 @@ export const renderChatBox = () => {
   </div>
 </div>`;
 
-    const inputMessage = chatBox.querySelector('#message');
-    const conversation = chatBox.querySelector('#conversation');
+  const inputMessage = chatBox.querySelector('#message');
+  const conversation = chatBox.querySelector('#conversation');
 
-    function encontrarObjetoPorId(idProcurado) {
-        return data.find(objeto => objeto.id === idProcurado);
+  function encontrarObjetoPorId(idProcurado) {
+    return data.find(objeto => objeto.id === idProcurado);
+  }
+  const params = new URLSearchParams(window.location.search);
+  const idURL = params.get("id");
+
+  const idDesejado = idURL;
+
+  const btnEnviar = chatBox.querySelector("#sendMessageBtn");
+  btnEnviar.addEventListener("click", async () => {
+
+    const objetoEncontrado = encontrarObjetoPorId(idDesejado);
+
+    if (objetoEncontrado) {
+
+      conversation.innerHTML += `<p style="text-align:right"> ${inputMessage.value} </p>`;
+      const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
+      conversation.innerHTML += `<p> ${resposta.choices[0].message.content} </p>`;
     }
-    const params = new URLSearchParams(window.location.search);
-    const idURL = params.get("id");
+  });
 
-    const idDesejado = idURL;
-
-    const btnEnviar = chatBox.querySelector("#sendMessageBtn");
-    btnEnviar.addEventListener("click", async () => {
-
-        const objetoEncontrado = encontrarObjetoPorId(idDesejado);
-
-        if (objetoEncontrado) {
-
-            conversation.innerHTML += `<p style="text-align:right"> ${inputMessage.value} </p>`;
-            const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
-            conversation.innerHTML += `<p> ${resposta.choices[0].message.content} </p>`;
-        }
-    });
-
-    /*const startConversation = async (id) => {
+  /*const startConversation = async (id) => {
         idPersonaName = id;
 
         const sendMessage = async () => {
@@ -106,5 +105,5 @@ export const renderChatBox = () => {
         return el;
     };*/
 
-    return chatBox
+  return chatBox
 };

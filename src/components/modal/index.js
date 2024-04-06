@@ -1,8 +1,8 @@
-import { setApiKey, getApiKey } from "../../lib/apiKey.js";
+import { setApiKey } from "../../lib/apiKey.js";
 
 export const renderModal = () => {
-    const modal = document.createElement('div');
-    modal.innerHTML = `
+  const modal = document.createElement('div');
+  modal.innerHTML = `
     <div class="key-content">
         <div>
             <button class="btnKey">API Key</button>
@@ -17,24 +17,24 @@ export const renderModal = () => {
         </div>
     </div>`;
    
-    const btnKeyApi = modal.querySelector(".btnKey");
-    const btnSubmitKey = modal.querySelector('.btnSubmitKey');
-    const btnCancelKey = modal.querySelector('.btnCancelKey');
-    const valueKey = modal.querySelector('#valueKey');
-    const dialogKey = modal.querySelector('.dialogKey');
+  const btnKeyApi = modal.querySelector(".btnKey");
+  const btnSubmitKey = modal.querySelector('.btnSubmitKey');
+  const btnCancelKey = modal.querySelector('.btnCancelKey');
+  const valueKey = modal.querySelector('#valueKey');
+  const dialogKey = modal.querySelector('.dialogKey');
 
-    btnKeyApi.addEventListener("click", () => {
-        dialogKey.showModal();
-    });
+  btnKeyApi.addEventListener("click", () => {
+    dialogKey.showModal();
+  });
 
-    btnSubmitKey.addEventListener("click", () => {
-        setApiKey(valueKey.value);
-        dialogKey.close();
-    });
+  btnSubmitKey.addEventListener("click", () => {
+    setApiKey(valueKey.value);
+    dialogKey.close();
+  });
 
-    btnCancelKey.addEventListener("click", () => {
-        dialogKey.close();
-    });
+  btnCancelKey.addEventListener("click", () => {
+    dialogKey.close();
+  });
 
-    return modal;
+  return modal;
 }
