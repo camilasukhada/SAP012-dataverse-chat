@@ -15,15 +15,31 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
 }
-
 
 main {
     display: flexbox;
 }
 
+p{
+    font-size: 15px; 
+}
 
-@media (max-width:600px) {
+ #root{ 
+    min-height: 500px;
+}
+
+@media (max-width: 370px){
+    .btnHomePage, .btnKey{
+    padding: 5px;
+    font-size: 15px;
+    width: 100px;
+}
+}
+
+
+@media (max-width: 600px) and (min-width: 370px) {
 
     header {
         justify-content: center;
@@ -37,7 +53,25 @@ main {
         align-items: center;
         text-align: center;
         height: fit-content;
+        font-size: 10px;
     }
+
+    /* p{
+        font-size: 10px;
+    } */
+
+    .dialogKey { 
+        background-color: #322d37;
+        color: #ffffff;
+        font-size: 15px;
+        justify-content: center;
+        text-align: center;
+        height: fit-content;
+        width: fit-content;
+        border-radius: 10px;
+        border-style:none;
+    }
+
 }
 
 @media (max-width:700px) {
@@ -47,21 +81,37 @@ main {
         align-items: center;
     }
 
+    .btnHomePage{
+        margin-right: 20px;
+    }
+
+    .btnKey{
+        margin-left: 20px;
+    }
+
     #reset-button {
         margin-top: 10px;
 
     }
 
+    header{
+        justify-content: center;
+    }
+
     h1 {
         font-size: 40px;
+        margin-right: 30px;
+        margin-left: 30px;
+        justify-content: center;
+        text-align: center;
     }
 
     header img {
-        max-height: 100px;
+        display: none;
     }
 }
 
-@media (max-width: 1050px) and (min-width: 700px) {
+@media (max-width: 1180px) and (min-width: 700px) {
 
     .comandos {
         flex-direction: column;
@@ -73,11 +123,19 @@ main {
 
     }
 
+    header{
+        justify-content: center;
+    }
+
     h1 {
-        font-size: 70px;
+        font-size: 40px;
+        margin-right: 0px;
+        margin-left: 0px;
+        justify-content: center;
+        text-align: center;
     }
 
     header img {
-        max-height: 150px;
+        max-height: 100px;
     }
 }
