@@ -8,7 +8,7 @@ import { renderButtons } from './components/buttons/index.js';
 import { renderModal } from './components/modal/index.js';
 import { homePage } from "./views/homePage/index.js";
 import { individualChat } from "./views/individualChat/index.js";
-import { error } from "./views/error/index.js";
+import { error } from "./views/Error/index.js";
 
 const routes = {
   "/": homePage,

@@ -1,0 +1,20 @@
+.imgError {
+    width: 400px;
+    height: 500px;
+    border-radius: 100%;
+}
+
+.div_Error {
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    filter: drop-shadow(10px 0 30px rgb(255, 253, 253));
+}
+
+.error_message {
+    font-size: 50px;
+    margin-top: 20px; /* Adiciona espaço entre a imagem e a mensagem de erro */
+   
+}
