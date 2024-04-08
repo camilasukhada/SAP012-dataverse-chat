@@ -10,8 +10,8 @@ export const renderChatBox = () => {
          <ul id="personaList"></ul>
   </div>
   <div class="persona-chat">
+  <p id="status"></p>
       <div id="conversation"> 
-      
       </div>
       <div class="caixa_de_texto">
           <input type="text" id="message" placeholder="Pergunte aqui..">
@@ -38,16 +38,15 @@ export const renderChatBox = () => {
 
         if (objetoEncontrado) {
 
+            const status = chatBox.querySelector('#status');
+            status.innerHTML = `${objetoEncontrado.personaName} está digitando`;
             conversation.innerHTML += `<p id = "styleQuestion"> ${inputMessage.value} </p>`;
             const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
             conversation.innerHTML += `<p id = "styleAnswer"> ${resposta.choices[0].message.content} </p>`;
             inputMessage.value="";
 
+            status.innerHTML = "";
         }
-
-    
     });
-
-   
     return chatBox
 };
