@@ -28,15 +28,19 @@ export const renderChatBox = () => {
   const params = new URLSearchParams(window.location.search);
   const idURL = params.get("id");
 
-            const status = chatBox.querySelector('#status');
-            status.innerHTML = `${objetoEncontrado.personaName} está digitando`;
-            conversation.innerHTML += `<p id = "styleQuestion"> ${inputMessage.value} </p>`;
-            const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
-            conversation.innerHTML += `<p id = "styleAnswer"> ${resposta.choices[0].message.content} </p>`;
-            inputMessage.value="";
-
-            status.innerHTML = "";
-        }
-    });
-    return chatBox
+  const btnEnviar = chatBox.querySelector("#sendMessageBtn");
+  btnEnviar.addEventListener("click", async () => {
+    const objetoEncontrado = encontrarObjetoPorId(idURL);
+    
+    if (objetoEncontrado) {
+      const status = chatBox.querySelector('#status');
+      status.innerHTML = `${objetoEncontrado.personaName} está digitando`;
+      conversation.innerHTML += `<p id="styleQuestion">${inputMessage.value}</p>`;
+      const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
+      conversation.innerHTML += `<p id="styleAnswer">${resposta.choices[0].message.content}</p>`;
+      inputMessage.value = "";
+      status.innerHTML = "";
+    }
+  });
+  return chatBox;
 };
