@@ -1,16 +1,18 @@
 footer {
-    font-size:20px;
     text-align: right;
     background-color: #e0cede5c;
     color: #322d37;
-    height: 50px;
+    height:fit-content;
     align-items: center;
-    padding-right: 15px;
+    /* padding-right: 15px;
     padding-top: 3px;
     padding-bottom: 15px;
-    margin-top: 40px;
-    font-weight: bold;
+    margin-top: 40px; 
+    font-weight: bold;*/
     border-radius: 10px;
 
 }
 
+p{
+    font-size:10px;
+}

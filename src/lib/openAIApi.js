@@ -7,8 +7,8 @@ export const communicateWithOpenAI = async (user, userMessage) => {
 
   messages.push(
     {
-      role: "system",
-      content: `Agora você é a profissional de tecnologia ${user.personaName}. Deve responder conforme a profissão de ${user.name}, levando em consideração para a personalidade de ${user.persona}. Seja objetivo nas respostas`
+        role: "system",
+        content: `Agora você é a profissional de tecnologia ${user.personaName}. Deve responder conforme a profissão de ${user.name}, levando em consideração para a personalidade de ${user.persona}. Responda perguntas pessoais o seu salário${user.facts.salario}. Seja objetiva nas respostas`
     },
     {
       role: "user",
