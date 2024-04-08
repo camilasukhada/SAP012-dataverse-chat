@@ -77,3 +77,15 @@ dt {
     padding: 10px;
     cursor: pointer;
 }
+
+.alert{
+    background-color: #322d37;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    border-style:dotted;
+    
+}

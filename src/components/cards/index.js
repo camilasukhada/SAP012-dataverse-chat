@@ -1,3 +1,5 @@
+import { getApiKey, setApiKey } from "../../lib/apiKey.js";
+
 export const renderCards = (data) => {
   const itens = document.createElement('ul');
   itens.classList.add('container_itens');
@@ -22,7 +24,14 @@ export const renderCards = (data) => {
 
   itens.querySelectorAll('.iniciarChat').forEach(button => {
     button.addEventListener('click', () => {
-      window.location.href = `/individualChat?id=${button.id}`; 
+      if (getApiKey() != "" && getApiKey() != null){
+        console.log(getApiKey());
+        window.location.href = `/individualChat?id=${button.id}`; 
+      }
+      else { 
+        alert("Favor preencher a API KEY encontrada no topo da página");
+      }
+      
     });
   });
 

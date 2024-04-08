@@ -1,7 +1,9 @@
+import { renderError } from "../../components/erro/index.js";
+
 const error = () => {
-  const errorElement = document.createElement('div');
-  errorElement.innerHTML = "OOOOPPS, PÁGINA DE ERRO!";
-  return errorElement;
+  const bodyError = document.createElement('div');
+  bodyError.appendChild(renderError());
+  return bodyError;
 }
 
 export { error };

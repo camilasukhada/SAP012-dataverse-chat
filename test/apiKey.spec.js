@@ -1,24 +1,24 @@
-/*import { getApiKey, setApiKey } from '../lib/apiKey.js';
+import { getApiKey, setApiKey } from '../../SAP012-dataverse-chat/src/lib/apiKey.js';
 
 describe('getApiKey', () => {
 
   it('deve retornar o valor da chave API', () => {
-    const apiKey = 'chave-api';
-    localStorage.setItem('apiKeyChatGPT', apiKey);
+    const apiKey = 'apiKey';
+    localStorage.setItem('apiKey', apiKey);
     expect(getApiKey()).toBe(apiKey);
   });
 
-  it('deve retornar null se a chave API não estiver definida', () => {
-    localStorage.removeItem('apiKeyChatGPT');
+  it('deve retornar null se a API Key não estiver definida', () => {
+    localStorage.removeItem('apiKey');
     expect(getApiKey()).toBeNull();
   });
 });
 
 describe('setApiKey', () => {
 
-  it('deve definir a chave API corretamente', () => {
-    const apiKey = 'novaApiKey';
+  it('deve definir a API Key corretamente', () => {
+    const apiKey = 'testandoNovaKey';
     setApiKey(apiKey);
-    expect(localStorage.getItem('apiKeyChatGPT')).toBe(apiKey);
+    expect(localStorage.getItem('apiKey')).toBe(apiKey);
   });
-});*/
+});

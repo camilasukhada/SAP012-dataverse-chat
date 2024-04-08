@@ -4,8 +4,6 @@ export const filterData = (data, filterBy, value) => {
 
     if (filterBy === "formacao") {
       splitValue = el.facts.formacao.split(", ");
-    } else if (filterBy === "techSkills") {
-      splitValue = el.facts.techSkills.split(", ");
     }
 
     const presenceArray = splitValue.map(item => item === value);

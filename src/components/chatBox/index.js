@@ -2,10 +2,9 @@ import { communicateWithOpenAI } from '../../lib/openAIApi.js'
 import { data } from '../../data/dataset.js'
 
 export const renderChatBox = () => {
-
-    const chatBox = document.createElement('div');
-    chatBox.classList.add('chat-box');
-    chatBox.innerHTML = `<div class="container">
+  const chatBox = document.createElement('div');
+  chatBox.classList.add('chat-box');
+  chatBox.innerHTML = `<div class="container">
   <div class="persona-list">
          <ul id="personaList"></ul>
   </div>
@@ -20,23 +19,14 @@ export const renderChatBox = () => {
   </div>
 </div>`;
 
-    const inputMessage = chatBox.querySelector('#message');
-    const conversation = chatBox.querySelector('#conversation');
+  const inputMessage = chatBox.querySelector('#message');
+  const conversation = chatBox.querySelector('#conversation');
 
-    function encontrarObjetoPorId(idProcurado) {
-        return data.find(objeto => objeto.id === idProcurado);
-    }
-    const params = new URLSearchParams(window.location.search);
-    const idURL = params.get("id");
-
-    const idDesejado = idURL;
-
-    const btnEnviar = chatBox.querySelector("#sendMessageBtn");
-    btnEnviar.addEventListener("click", async () => {
-
-        const objetoEncontrado = encontrarObjetoPorId(idDesejado);
-
-        if (objetoEncontrado) {
+  function encontrarObjetoPorId(idProcurado) {
+    return data.find(objeto => objeto.id === idProcurado);
+  }
+  const params = new URLSearchParams(window.location.search);
+  const idURL = params.get("id");
 
             const status = chatBox.querySelector('#status');
             status.innerHTML = `${objetoEncontrado.personaName} está digitando`;
