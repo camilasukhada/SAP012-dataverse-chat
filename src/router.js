@@ -11,7 +11,13 @@ function setRoutes(routes) {
 
 function renderView(view, props) {
   rootEl.innerHTML = "";
-  rootEl.appendChild(ROUTES[view](props))
+  
+  const pagina =  ROUTES[view];
+  if (pagina===undefined ){
+    localStorage.setItem("type", "NotFound");
+    rootEl.appendChild(ROUTES["/error"](props));
+  } else{
+    rootEl.appendChild(ROUTES[view](props))}
 }
 
 function navigateTo(pathname, props) {

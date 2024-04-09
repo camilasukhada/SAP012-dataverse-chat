@@ -10,6 +10,7 @@ export const renderButtons = () => {
 
   const btnHome = btnHomePage.querySelector(".btnHome");
   btnHome.addEventListener("click", () => {
+    localStorage.removeItem("type");
     window.location.href = "/";
   });
   

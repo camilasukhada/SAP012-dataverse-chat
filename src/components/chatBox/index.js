@@ -29,15 +29,24 @@ export const renderChatBox = () => {
   const idURL = params.get("id");
 
   const btnEnviar = chatBox.querySelector("#sendMessageBtn");
+
   btnEnviar.addEventListener("click", async () => {
     const objetoEncontrado = encontrarObjetoPorId(idURL);
-    
+
     if (objetoEncontrado) {
       const status = chatBox.querySelector('#status');
       status.innerHTML = `${objetoEncontrado.personaName} está digitando`;
       conversation.innerHTML += `<p id="styleQuestion">${inputMessage.value}</p>`;
-      const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
-      conversation.innerHTML += `<p id="styleAnswer">${resposta.choices[0].message.content}</p>`;
+
+      try {
+        const resposta = await communicateWithOpenAI(objetoEncontrado, inputMessage.value);
+        conversation.innerHTML += `<p id="styleAnswer">${resposta.choices[0].message.content}</p>`;
+
+      } catch (error) {
+        localStorage.setItem("type", "chat");
+        window.location.href = '/error';
+      }
+
       inputMessage.value = "";
       status.innerHTML = "";
     }
