@@ -43,6 +43,7 @@ export const renderChatBox = () => {
         conversation.innerHTML += `<p id="styleAnswer">${resposta.choices[0].message.content}</p>`;
 
       } catch (error) {
+        localStorage.setItem("type", "chat");
         window.location.href = '/error';
       }
 

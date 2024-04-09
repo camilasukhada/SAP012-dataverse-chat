@@ -8,7 +8,7 @@ export const renderError = () => {
   image.classList.add('imgError');
 
   const errorMessage = document.createElement('p');
-  errorMessage.textContent = "Opps... Houve um erro!";
+  errorMessage.textContent = "Opss... Houve um erro!";
   errorMessage.classList.add('error_message');
 
   elementError.appendChild(image);

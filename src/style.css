@@ -3,6 +3,8 @@
 @import url("./components/chatBox/style.css");
 
 @import url("./components/erro/style.css");
+@import url("./components/errorApi/style.css");
+@import url("./components/errorRoute/style.css");
 
 
 @import url("./components/filters/style.css");
