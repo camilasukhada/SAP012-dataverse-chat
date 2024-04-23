@@ -9,9 +9,9 @@ const error = () => {
   const bodyError = document.createElement('div');
   bodyError.appendChild(renderError());  
   
-  if (localStorage.getItem("type") == "chat") {
+  if (localStorage.getItem("type") === "chat") {
     bodyError.appendChild(renderErrorApi());
-  } else if (localStorage.getItem("type") == "NotFound") {
+  } else if (localStorage.getItem("type") === "NotFound") {
     bodyError.appendChild(renderErrorRoute());
   }
 
