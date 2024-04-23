@@ -1,5 +1,7 @@
 <img src="/src/assets/bannerMulheresTech.jpg">
-# Dataverse Chat
+
+# **Dataverse Chat**
+![Status](https://img.shields.io/static/v1?label=Status&message=CONCLU%C3%8DDO&color=%3CCOLOR%3E&style=%3CSTYLE%3E&logo=%3CLOGO%3E)
 
 ## Índice
 
