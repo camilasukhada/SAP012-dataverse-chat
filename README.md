@@ -228,8 +228,6 @@ apenas **JavaScript puro**.
 
 - **GitHub: Criação de contas e repositórios, configuração de chave SSH**
 
-- **GitHub: Implantação com GitHub Pages**
-
 - **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
 
 ### Centrado no usuário
